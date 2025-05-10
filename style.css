@@ -1,0 +1,159 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #f8a1c4, #f0c0d0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #4a4a4a;
+}
+
+#container {
+    display: flex;
+    width: 90%;
+    height: 90%;
+    background: #ffe4ec;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+#profile-panel {
+    width: 40%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #ffe4ec;
+    border-right: 2px solid #f8a1c4;
+}
+
+#profile-picture-container {
+    width: 600px;
+    height: 600px;
+    position: relative;
+    border: 4px dashed #f8a1c4;
+    margin: 20px 0;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    background: #fff;
+}
+
+#profile-picture {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+button {
+    background-color: #f8a1c4;
+    color: f8a1c4;
+    border: none;
+    padding: 12px 25px;
+    cursor: pointer;
+    border-radius: 25px;
+    margin-top: 10px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    background-color: #d86b94;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.sticker-panel {
+    width: 60%;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: auto;
+    gap: 15px;
+    background: #ffe4ec;
+}
+.hidden {
+    display: none !important;
+}
+
+.sticker-option {
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.sticker-option:hover {
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.sticker-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform-origin: center center;
+    transition: transform 0.1s ease, left 0.1s ease, top 0.1s ease;
+}
+.sticker-wrapper img {
+    transition: width 0.1s ease, height 0.1s ease;
+}
+
+.sticker-wrapper .resizer, .sticker-wrapper .rotator {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: #fff;
+    border: 2px solid #f8a1c4;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+.sticker-wrapper .resizer:hover, .sticker-wrapper .rotator:hover {
+    background-color: #f8a1c4;
+}
+.sticker-wrapper .resizer {
+    right: -10px;
+    bottom: -10px;
+    cursor: nwse-resize;
+}
+
+.sticker-wrapper .rotator {
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: grab;
+}
+
+.delete-button {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 20px;
+    height: 20px;
+    background-color: #ff6b6b;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.delete-button:hover {
+    background-color: #ff4c4c;
+    transform: scale(1.2);
+}
